@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Loader</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family:Arial, Helvetica, sans-serif;
+            background-color: black;
+            color: white;
+        }
+        .loader{
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .ring{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            animation: ring 2s linear infinite;
+        }
+        @keyframes ring {
+            0%{
+                transform:rotate(0deg);
+                box-shadow: 1px 5px 2px #e65c00;
+            }
+            50%{
+                transform:rotate(180deg);
+                box-shadow: 1px 5px 2px #18b201;
+            }
+            100%{
+                transform:rotate(360deg);
+                box-shadow: 1px 5px 2px #e65c00;
+            }
+            
+        }
+        .ring:before{
+            position: absolute;
+            content:'';
+            left:0;
+            top:0;
+            height: 100%;
+            width: 100%;
+            box-shadow: 0 0 5px rgba(255, 255, 255, .3);
+            border-radius: 50%;
+        }
+        span{
+            position: absolute;
+            color:#737373;
+            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 200px;
+            border-radius: 50%;
+            animation: text 3s ease-in-out linear infinite;
+        }
+        @keyframes span {
+            50%{
+                color: black;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="loader"> 
+        <div class="ring"></div>
+        <span>Loading...</span>
+        
+    </div>
+    
+    
+</body>
+</html>
